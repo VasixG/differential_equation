@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+%\usepackage[russian, english]{babel}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{MnSymbol}
+%\usepackage{latexsim}
+\usepackage[active]{srcltx}
+\usepackage[final]{pdfpages}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage{bigints}
+\usepackage{changepage}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=false,unicode=true]{hyperref}
+\usepackage[labelsep=period]{caption}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usepgflibrary{arrows} % LATEX and plain TEX and pure pgf
+\usetikzlibrary{arrows} % LATEX and plain TEX when using Tik Z
+\definecolor{whitesmoke}{rgb}{0.9,0.9,0.9} \definecolor{whitesmoke2}{rgb}{0.8,0.8,0.8}
+
+\def\e{\varepsilon}
+\newcommand{\pp}{\varphi}
+\catcode`@=11
+\def\caseswithdelim#1#2{\left#1\,\vcenter{\normalbaselines\m@th
+  \ialign{\strut$##\hfil$&\quad##\hfil\crcr#2\crcr}}\right.}% you might like it without the \strut
+\catcode`@=12
+%
+\def\bcases#1{\caseswithdelim[{#1}}
+\def\vcases#1{\caseswithdelim|{#1}}
+%
+% Пакеты по желанию (самые распространенные)
+% Хитрые мат. символы
+\usepackage{euscript}
+% Таблицы
+\usepackage{longtable}
+\usepackage{makecell}
+
+\title{Исследование одной двумерной системы автономных дифференциальных уравнений с малым параметром возмущения}
+\author{Василий Горелов}
+
+\begin{document}
+
+\maketitle
+
+\section{Вступление}
+Имеется первоначальная система без возмущений:
+\begin{equation}
+\begin{cases}
+      \dot x=-xy^2+x+y,\\
+      \dot y=-x-y+x^2y.
+    \end{cases}
+    \label{eq:first}
+\end{equation}
+
+После добавления определенного малого возмущения 3-его порядка изначальная система (\ref{eq:first}) примет вид:
+\begin{equation}
+\begin{cases}
+      \dot x=-xy^2+x+y-\epsilon x^3,\\
+      \dot y=-x-y+x^2y+\epsilon y^3.
+    \end{cases}
+    \label{eq:second}
+\end{equation}
+
+Поскольку система (\ref{eq:first}) была достаточно изучена в предыдущей работе, то сосредоточимся на возмущенной системе (\ref{eq:second}).\\
+
+Для начала составим интегрируемую комбинацию. Используя те же соображения, что и в работе \cite{basov}, получаем два соотношения:
+\begin{equation*}
+\dot{xy} = (x^2-y^2)(xy(1-\epsilon)-1)\hbox{,\hspace{10pt}} \dot x^2+\dot y^2 = 2(x^2-y^2)(1-\epsilon(x^2+y^2)).
+\end{equation*}
+
+Подставляя отсюда $x^2-y^2$ из второго уравнения в первое получаем интегрируемую комбинацию $d(x^2+y^2)2^{-1}(1-\epsilon(x^2+y^2))^{-1}=d(xy)(xy(1-\epsilon)-1)^{-1}$ ,или $xy(1-\epsilon)=1$, или $\epsilon(x^2+y^2)=1$.\\
+
+Интегрируя, получаем первый интеграл системы (\ref{eq:second}) 
+
+\begin{equation}
+    (1-\epsilon)^{-1}\ln|(1-\epsilon)xy -1|+2^{-1}\epsilon^{-1}\ln{|\epsilon(x^2+y^2)-1|} = C
+\end{equation}
+
+Минуя все вычисления, имеем семь особых точек системы (\ref{eq:second}) при $\epsilon > 0$: $(0,0)$, $(\pm\sqrt{2(1+\epsilon)^{-1}}$, $\pm\sqrt{2(1+\epsilon)^{-1}})$, ()
+
+ \begin{thebibliography}{1}
+\bibitem{basov} Басов В.В. \flqq 	Обыкновенные дифференциальные уравнения. Лекции и практические занятия\frqq. 2023, pp. 1223-1235.
+\end{thebibliography}
+\end{document}
