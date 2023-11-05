@@ -1,0 +1,92 @@
+\documentclass[12pt,diff_rus]{article} % for LaTeX 2e
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage[english,russian]{babel} % LaTeX distr. specific
+\usepackage{amssymb,amscd,amsmath}    % ����� AMS � ������� ��������
+\usepackage{diff_rus}                  % ����� ��� ������������ �������
+\usepackage{graphicx} % Required for inserting images
+
+%\usepackage[russian, english]{babel}
+\usepackage{MnSymbol}
+\usepackage[active]{srcltx}
+\usepackage[final]{pdfpages}
+
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+
+\usepackage{tikz}
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage{bigints}
+\usepackage{changepage}
+
+\usepackage[labelsep=period]{caption}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usepgflibrary{arrows} % LATEX and plain TEX and pure pgf
+\usetikzlibrary{arrows} % LATEX and plain TEX when using Tik Z
+\definecolor{whitesmoke}{rgb}{0.9,0.9,0.9} \definecolor{whitesmoke2}{rgb}{0.8,0.8,0.8}
+
+\def\e{\varepsilon}
+\newcommand{\pp}{\varphi}
+\catcode`@=11
+\def\caseswithdelim#1#2{\left#1\,\vcenter{\normalbaselines\m@th
+  \ialign{\strut$##\hfil$&\quad##\hfil\crcr#2\crcr}}\right.}% you might like it without the \strut
+\catcode`@=12
+%
+\def\bcases#1{\caseswithdelim[{#1}}
+\def\vcases#1{\caseswithdelim|{#1}}
+%
+% Пакеты по желанию (самые распространенные)
+% Хитрые мат. символы
+\usepackage{euscript}
+% Таблицы
+\usepackage{longtable}
+\usepackage{makecell}
+
+
+
+\setlength{\textwidth}{170mm}          % ������ ������
+\setlength{\textheight}{240mm}         % ������ ������ (��� ����� �����������)
+\setlength{\topmargin}{-20mm }         % ���������� �� �������� ������ �����
+\setlength{\evensidemargin}{0mm}       % �� �����������
+\setlength{\oddsidemargin}{0mm}        % �� ����������� = 1 ���� + ��������
+                                       % ���������
+\setlength{\parskip}{4pt}              % �������� �������
+\setlength{\parindent}{2em}            % �������� ������
+\setlength{\arrayrulewidth}{0.8pt}     % ������� ����� ���������
+\setlength{\doublerulesep}{6pt}        % ������ ������� ����� ���������
+                                       % ������������� ������� �������
+\renewcommand{\arraystretch}{1.15}     % ����������� ���������� ������������
+                                       % ��������� � �������
+
+\tolerance=10000
+\hbadness=10000
+\vbadness=10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% ������� ����������� � ����� DIFF_RUS.TEX � DIFF_RUS.STY
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ��������� ����� ��������
+\setcounter{page}{1}                   % ����� ������ ��������
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\refname}{����������}
+\newtheorem{definition}{�����������}
+\newtheorem{theorem}{�������}
+\newtheorem{proposition}{�����������}
+\newtheorem{corollary}{���������}
+
+
+\begin{document}
+\input{diff_rus.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ��� ����� ����� ������
+\input{main.tex}
+\end{document}

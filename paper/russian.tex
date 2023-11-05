@@ -1,23 +1,64 @@
 \documentclass[12pt,diff_rus]{article} % for LaTeX 2e
-\usepackage[cp1251]{inputenc}        % LaTeX distr. specific
+\usepackage[utf8]{inputenc}        % LaTeX distr. specific
+\usepackage[colorlinks=false]{hyperref}
 \usepackage[english,russian]{babel} % LaTeX distr. specific
-\usepackage{amssymb,amscd,amsmath}    % стиль AMS и русские переносы
-\usepackage{diff_rus}                  % стиль для колонтитулов журнала
+\usepackage{amssymb,amscd,amsmath}    % СЃС‚РёР»СЊ AMS Рё СЂСѓСЃСЃРєРёРµ РїРµСЂРµРЅРѕСЃС‹
+\usepackage{diff_rus}                  % СЃС‚РёР»СЊ РґР»СЏ РєРѕР»РѕРЅС‚РёС‚СѓР»РѕРІ Р¶СѓСЂРЅР°Р»Р°
 
+\usepackage{graphicx} % Required for inserting images
 
-\setlength{\textwidth}{170mm}          % ширина текста
-\setlength{\textheight}{240mm}         % высота текста (без учета колонтитула)
-\setlength{\topmargin}{-20mm }         % расстояние от верхнего обреза листа
-\setlength{\evensidemargin}{0mm}       % до колонтитула
-\setlength{\oddsidemargin}{0mm}        % до колонтитула = 1 дюйм + значение
-                                       % параметра
-\setlength{\parskip}{4pt}              % абзацный пропуск
-\setlength{\parindent}{2em}            % абзацный отступ
-\setlength{\arrayrulewidth}{0.8pt}     % толщина линий разграфки
-\setlength{\doublerulesep}{6pt}        % ширина пробела между соседними
-                                       % параллельными линиями таблицы
-\renewcommand{\arraystretch}{1.15}     % коэффициент увеличения межстрочного
-                                       % интервала в таблице
+%\usepackage[russian, english]{babel}
+\usepackage{MnSymbol}
+\usepackage[active]{srcltx}
+\usepackage[final]{pdfpages}
+
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+
+\usepackage{tikz}
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage{bigints}
+\usepackage{changepage}
+
+\usepackage[labelsep=period]{caption}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
+\usepgflibrary{arrows} % LATEX and plain TEX and pure pgf
+\usetikzlibrary{arrows} % LATEX and plain TEX when using Tik Z
+\definecolor{whitesmoke}{rgb}{0.9,0.9,0.9} \definecolor{whitesmoke2}{rgb}{0.8,0.8,0.8}
+
+\def\e{\varepsilon}
+\newcommand{\pp}{\varphi}
+\catcode`@=11
+\def\caseswithdelim#1#2{\left#1\,\vcenter{\normalbaselines\m@th
+  \ialign{\strut$##\hfil$&\quad##\hfil\crcr#2\crcr}}\right.}% you might like it without the \strut
+\catcode`@=12
+%
+\def\bcases#1{\caseswithdelim[{#1}}
+\def\vcases#1{\caseswithdelim|{#1}}
+%
+% РџР°РєРµС‚С‹ РїРѕ Р¶РµР»Р°РЅРёСЋ (СЃР°РјС‹Рµ СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅРµРЅРЅС‹Рµ)
+% РҐРёС‚СЂС‹Рµ РјР°С‚. СЃРёРјРІРѕР»С‹
+\usepackage{euscript}
+% РўР°Р±Р»РёС†С‹
+\usepackage{longtable}
+\usepackage{makecell}
+
+\setlength{\textwidth}{170mm}          % С€РёСЂРёРЅР° С‚РµРєСЃС‚Р°
+\setlength{\textheight}{240mm}         % РІС‹СЃРѕС‚Р° С‚РµРєСЃС‚Р° (Р±РµР· СѓС‡РµС‚Р° РєРѕР»РѕРЅС‚РёС‚СѓР»Р°)
+\setlength{\topmargin}{-20mm }         % СЂР°СЃСЃС‚РѕСЏРЅРёРµ РѕС‚ РІРµСЂС…РЅРµРіРѕ РѕР±СЂРµР·Р° Р»РёСЃС‚Р°
+\setlength{\evensidemargin}{0mm}       % РґРѕ РєРѕР»РѕРЅС‚РёС‚СѓР»Р°
+\setlength{\oddsidemargin}{0mm}        % РґРѕ РєРѕР»РѕРЅС‚РёС‚СѓР»Р° = 1 РґСЋР№Рј + Р·РЅР°С‡РµРЅРёРµ
+                                       % РїР°СЂР°РјРµС‚СЂР°
+\setlength{\parskip}{4pt}              % Р°Р±Р·Р°С†РЅС‹Р№ РїСЂРѕРїСѓСЃРє
+\setlength{\parindent}{2em}            % Р°Р±Р·Р°С†РЅС‹Р№ РѕС‚СЃС‚СѓРї
+\setlength{\arrayrulewidth}{0.8pt}     % С‚РѕР»С‰РёРЅР° Р»РёРЅРёР№ СЂР°Р·РіСЂР°С„РєРё
+\setlength{\doublerulesep}{6pt}        % С€РёСЂРёРЅР° РїСЂРѕР±РµР»Р° РјРµР¶РґСѓ СЃРѕСЃРµРґРЅРёРјРё
+                                       % РїР°СЂР°Р»Р»РµР»СЊРЅС‹РјРё Р»РёРЅРёСЏРјРё С‚Р°Р±Р»РёС†С‹
+\renewcommand{\arraystretch}{1.15}     % РєРѕСЌС„С„РёС†РёРµРЅС‚ СѓРІРµР»РёС‡РµРЅРёСЏ РјРµР¶СЃС‚СЂРѕС‡РЅРѕРіРѕ
+                                       % РёРЅС‚РµСЂРІР°Р»Р° РІ С‚Р°Р±Р»РёС†Рµ
 
 \tolerance=10000
 \hbadness=10000
@@ -25,26 +66,26 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%
-%%% Внесите исправления в файлы DIFF_RUS.TEX и DIFF_RUS.STY
+%%% Р’РЅРµСЃРёС‚Рµ РёСЃРїСЂР°РІР»РµРЅРёСЏ РІ С„Р°Р№Р»С‹ DIFF_RUS.TEX Рё DIFF_RUS.STY
 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Выставите номер страницы
-\setcounter{page}{1}                   % номер первой страницы
+%%% Р’С‹СЃС‚Р°РІРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СЂР°РЅРёС†С‹
+\setcounter{page}{1}                   % РЅРѕРјРµСЂ РїРµСЂРІРѕР№ СЃС‚СЂР°РЅРёС†С‹
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\refname}{Литература}
-\newtheorem{definition}{Определение}
-\newtheorem{theorem}{Теорема}
-\newtheorem{proposition}{Утверждение}
-\newtheorem{corollary}{Следствие}
+\renewcommand{\refname}{Р›РёС‚РµСЂР°С‚СѓСЂР°}
+\newtheorem{definition}{РћРїСЂРµРґРµР»РµРЅРёРµ}
+\newtheorem{theorem}{РўРµРѕСЂРµРјР°}
+\newtheorem{proposition}{РЈС‚РІРµСЂР¶РґРµРЅРёРµ}
+\newtheorem{corollary}{РЎР»РµРґСЃС‚РІРёРµ}
 
 
 \begin{document}
 \input{diff_rus.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Имя файла Вашей статьи
-%\input{art_name.tex}
+%%% РРјСЏ С„Р°Р№Р»Р° Р’Р°С€РµР№ СЃС‚Р°С‚СЊРё
+\input{main.tex}
 \end{document}
